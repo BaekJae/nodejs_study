@@ -46,3 +46,6 @@ RUN apt-get update && apt-get install -y vim nano net-tools openssh-server
 #use myapp -> use커맨드로 db생성, show collections -> collection을 보여달라
 #db.memo.insert({title:"hello",text:"welcome to mongo land"}) -> 메모 작성 sample, db.memo.find()-> 메모 상세정보 찾기, exit or crtl+c -> 나가기
 #wget -> 주로 파일 받을 때 사용
+#윈도우일때는 리눅스 셀로 경로잡을때 '//'를 사용해야한다.
+#winpty docker exec -d -w //home//work//nodejs_study test2 node testserver.js(d: 백그라운드 실행 옵션)
+#git bash 설치시, winpty옵션 미적용으로 도커 접속시마다 명령어 앞에 winpty 붙여야함
