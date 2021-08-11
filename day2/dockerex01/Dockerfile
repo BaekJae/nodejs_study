@@ -1,3 +1,48 @@
 #도커파일의 첫번째 문자는 무조건 대문자. 명심하자.
 FROM node:14
+RUN apt-get update && apt-get install -y vim nano net-tools openssh-server
+#초기 생성을 이를 실행하고 만들어달라.(대시스크립트 개행: &&하고 다음줄 입력)
+#-y:물어보지 않아도 설치하는 옵션
+
 #이미지 받아오기
+#docker build . -t study/hello-node:step1 -> -t이후는 도커 이미지의 이름과 태그명 지정 -> 도커 이미지 빌드
+
+#docker create -it --name doc-node-test study/hello-node:step1
+#docker create -it(interactive, tty통신) --name 컨테이너이름 이미지이름
+
+#docker rm 컨테이너 -> 컨테이너 지우기
+#docker rmi 이미지 -> 이미지 지우기
+#docker start 컨테이너주소 -> 해당 주소를 가진 컨테이너 시작
+#docker start 컨테이너이름 -> 해당 이름을 가진 컨테이너 시작
+
+#docker stop 컨테이너주소 -> 해당 주소를 가진 컨테이너 중지
+#docker stop 컨테이너이름 -> 해당 이름을 가진 컨테이너 중지
+
+#vim 탐색기 나가는방법 -> ":q"입력
+
+#docker ps -> 컨테이너 리스트
+#docker ps -a -> 모든 컨테이너 리스트
+
+#docker exec it 컨테이너주소 bash -> 해당 주소를 가진 컨테이너 접속
+#docker exec it 컨테이너아이디(이름) bash -> 해당 이름을 가진 컨테이너 접속
+
+#passwd root -> root의 패스워드, ssh를 쓰려면 패스워드를 걸어야한다
+#기본설정은 보안으로 막혀있으므로, Login 설정을 해제해야함
+#openssh-server -> /etc/ssh/sshd_config -> PermitRootLogin yes -> 저장하지 않고 종료 => :q! or :q , 저장 후 종료 => ZZ or :wq or :x
+#service ssh start
+#ssh root@localhost -p 8022
+#vscode -> remote ssh설치 -> 원격탐색기 설정추가
+#docker create -p 8125:8125 -p 8022:22 -it --name test2 hello-node:step1
+#도커의 8125포트를 메인 컴퓨터의 8125으로 포트포워딩, 도커의 22포트(SSH포트)를 메인컴퓨터의 8022로 포트포워딩하는 도커를 만들어라.
+
+#System staus와 결과 전부 받아오기 ->  curl  -i -X GET http://192.168.0.24:8135(url:포트)
+#결과만 받아오기 ->  curl  -X GET http://192.168.0.24:8135(url:포트)
+#-i -> 헤더까지 출력
+#-X -> method지정 (GET,POST)
+#맨 뒤에 uri지정(uri:http(스키마)를 포함한 전체 요청 문장)
+
+#docker 생성(mongodb는 it옵션 생략가능) -> docker run --name mongo_container -d -p 27017:27017 -v C:\Users\user\Desktop\work\nodejs_study\database:/data/db mongo
+#설치 후 mongo커맨드 입력, show dbs -> 몽고DB DB목록 보여주기
+#use myapp -> use커맨드로 db생성, show collections -> collection을 보여달라
+#db.memo.insert({title:"hello",text:"welcome to mongo land"}) -> 메모 작성 sample, db.memo.find()-> 메모 상세정보 찾기, exit or crtl+c -> 나가기
+
