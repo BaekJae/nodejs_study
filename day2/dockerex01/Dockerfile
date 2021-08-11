@@ -45,4 +45,4 @@ RUN apt-get update && apt-get install -y vim nano net-tools openssh-server
 #설치 후 mongo커맨드 입력, show dbs -> 몽고DB DB목록 보여주기
 #use myapp -> use커맨드로 db생성, show collections -> collection을 보여달라
 #db.memo.insert({title:"hello",text:"welcome to mongo land"}) -> 메모 작성 sample, db.memo.find()-> 메모 상세정보 찾기, exit or crtl+c -> 나가기
-
+#wget -> 주로 파일 받을 때 사용
