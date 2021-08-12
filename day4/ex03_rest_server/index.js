@@ -31,7 +31,8 @@ http.createServer((req,res) => {
         result.title = _title;
         result.msg = _msg;
     }
-    else if(urlObj.pathname === '/sum'){ //add요청 처리
+    //api가 많을 경우 switch-case문 사용
+    /*else if(urlObj.pathname === '/sum'){ //add요청 처리
         let _a = parseInt(urlObj.searchParams.get('a'));
         let _b = parseInt(urlObj.searchParams.get('b'));
         result.cal = _a + _b;
@@ -48,7 +49,7 @@ http.createServer((req,res) => {
         let _d = parseInt(urlObj.searchParams.get('d'));
         let _e = parseInt(urlObj.searchParams.get('e'));
         result.cal = (_a+_b+_c+_d+_e) / 5;
-    }
+    }*/
     res.end(JSON.stringify(result));
 }).listen(port);
 
