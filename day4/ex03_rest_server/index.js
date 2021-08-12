@@ -41,6 +41,14 @@ http.createServer((req,res) => {
         let _b = parseInt(urlObj.searchParams.get('b'));
         result.cal = _a - _b;
     }
+    else if(urlObj.pathname === '/avg'){
+        let _a = parseInt(urlObj.searchParams.get('a'));
+        let _b = parseInt(urlObj.searchParams.get('b'));
+        let _c = parseInt(urlObj.searchParams.get('c'));
+        let _d = parseInt(urlObj.searchParams.get('d'));
+        let _e = parseInt(urlObj.searchParams.get('e'));
+        result.cal = (_a+_b+_c+_d+_e) / 5;
+    }
     res.end(JSON.stringify(result));
 }).listen(port);
 
