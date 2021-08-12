@@ -1,1 +1,8 @@
+###REST ECHO
 GET http://localhost:8125/echo?msg=nodejs&title=hello
+
+###REST ADD
+GET http://localhost:8125/sum?a=3&b=4
+
+###REST SUBSTRACT
+GET http://localhost:8125/sub?a=4&b=3
