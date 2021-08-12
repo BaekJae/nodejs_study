@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y vim nano net-tools openssh-server
 #passwd root -> root의 패스워드, ssh를 쓰려면 패스워드를 걸어야한다
 #기본설정은 보안으로 막혀있으므로, Login 설정을 해제해야함
 #openssh-server -> /etc/ssh/sshd_config -> PermitRootLogin yes -> 저장하지 않고 종료 => :q! or :q , 저장 후 종료 => ZZ or :wq or :x
-#service ssh start
+#service ssh start -> start 안할시 원격 접속 X
 #ssh root@localhost -p 8022
 #vscode -> remote ssh설치 -> 원격탐색기 설정추가
 #docker create -p 8125:8125 -p 8022:22 -it --name test2 hello-node:step1
