@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 id="title">Title</h1>
+        <h1 id="msg">Msg</h1>
+        <script>
+            (async function(){
+                let res = await (await fetch('http://localhost:8125/echo?title=hello&msg=nodejs')).json();
+                console.log(res);
+                document.querySelector('#title').innerText = res.title;
+                document.querySelector('#msg').innerText = res.msg;
+            })();
+        </script>
+    </body>
+</html>
