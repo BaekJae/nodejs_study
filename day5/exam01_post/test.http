@@ -1,0 +1,5 @@
+###REST ECHO(POST) - 헤더 끝나고 개행 한번
+POST http://localhost:8125/echo
+my-custom-header : 'hi'
+
+hello post
