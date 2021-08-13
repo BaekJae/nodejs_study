@@ -48,3 +48,6 @@ wget -> 주로 파일 받을 때 사용
 winpty docker exec -d -w //home//work//nodejs_study test2 node testserver.js(d: 백그라운드 실행 옵션)
 git bash 설치시, winpty옵션 미적용으로 도커 접속시마다 명령어 앞에 winpty 붙여야함
 docker내부의 포트포워딩 포트를 확인해야 함 -> 아닐 시 오류 발생 가능성 다수 (웹 서버 구동시)
+
+nodemon -> 소스를 고치면 자동으로 반영함
+install 방법 -> npm i nodemon -g
