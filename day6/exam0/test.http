@@ -1,0 +1,2 @@
+### test hello(by GET method)
+GET http://localhost:8125
