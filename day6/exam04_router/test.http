@@ -1,0 +1,28 @@
+###get list(user)
+GET http://localhost:8125/api/v1/user/list
+
+###add user
+POST http://localhost:8125/api/v1/user/addUser
+Content-Type:application/x-www-form-urlencoded
+
+name=Tommy
+
+###update user
+POST http://localhost:8125/api/v1/user/update
+Content-Type: application/json
+
+{"name": "Jane"}
+###get list(product)
+GET http://localhost:8125/api/v1/product/list
+
+###add product
+POST http://localhost:8125/api/v1/product/add
+Content-Type: application/json
+
+{"name": "iphone"}
+
+###update product
+POST http://localhost:8125/api/v1/product/update
+Content-Type: text/plain
+
+name=galaxy

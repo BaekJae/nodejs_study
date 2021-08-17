@@ -1,0 +1,9 @@
+### test post hello
+POST http://localhost:8125/api/v1/hello
+
+hello post somebody
+### test post addUser v2
+POST http://localhost:8125/api/v2/addUser
+Content-Type:application/json
+
+{"name":"Tommy", "age":28}
