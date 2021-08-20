@@ -9,7 +9,9 @@ export default (db_client)=>{
     router.use('/',(req,res,next)=>{
         console.log(`allowed cors: ${req.originalUrl}`);
         //res.set('Access-Control-Allow-Origin','http://localhost:8080')//CORS 허용 -> 특정 아이피에 대한 접근 허용 -> 법적 책임
-        res.set('Access-Control-Allow-Origin','*');//모든 도메인에 대한 CORS허용
+        res.set('Access-Control-Allow-Origin','*'); //모든 도메인에 대한 CORS허용
+        res.set('Access-Control-Allow-Methods','*'); //methods 허용
+        res.set('Access-Control-Allow-Headers','*'); //header 항목 허용
         next();
     })
     router.post('/insert',async(req,res)=>{

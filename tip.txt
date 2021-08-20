@@ -51,3 +51,5 @@ docker내부의 포트포워딩 포트를 확인해야 함 -> 아닐 시 오류 
 
 nodemon -> 소스를 고치면 자동으로 반영함
 install 방법 -> npm i nodemon -g
+
+ls -al : 숨김파일보기

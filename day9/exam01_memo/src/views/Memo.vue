@@ -23,7 +23,7 @@ export default {
   methods:{
     deleteMemo(_id){
       console.log(_id);
-      this.$store.displatch()
+      this.$store.dispatch('deleteMemo',_id)
     },
     updateList(){
       this.$store.dispatch('updateMemoList')
